@@ -18,10 +18,6 @@ jwt = JWT(app, authenticate, identity)
 app.config['UPLOAD_FOLDER'] = 'imgs/'
 
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
 api.add_resource(register,'/register')
 api.add_resource(login,'/login')
 api.add_resource(category,'/add-category')
