@@ -6,7 +6,7 @@ import os
 from security import authenticate,identity
 
 from resources.login import login,register
-from resources.category import category
+from resources.category import category,categorylist
 from resources.article import article,getarticles,getarticlesbycat
 
 app = Flask(__name__)
@@ -24,6 +24,7 @@ api.add_resource(category,'/add-category')
 api.add_resource(article,'/post-article')
 api.add_resource(getarticles,'/get-articles')
 api.add_resource(getarticlesbycat,'/get-articles-cat')
+api.add_resource(categorylist,'/get-categories')
 
 @app.route('/')
 def index():

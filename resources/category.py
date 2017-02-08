@@ -36,6 +36,6 @@ class category(Resource):
 
 class categorylist(Resource):
     def get(self):
-        return {'category': [x.json() for x in categorymodel.query.all()]}
+        return {'categories': [x.json() for x in categorymodel.query.all()]}
 
 
