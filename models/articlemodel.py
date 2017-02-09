@@ -55,12 +55,12 @@ class articlemodel(db.Model):
 
     @classmethod
     def getarticles(cls,page):
-        articles = cls.query.order_by(cls.article_post_date.desc()).paginate(page=page, per_page=3)
+        articles = cls.query.order_by(cls.article_post_date.desc()).paginate(page=page, per_page=5)
         return articles
 
     @classmethod
     def getarticlesbycategory(cls,page,category_id):
-        articles = cls.query.filter_by(category_id=category_id).paginate(page=page, per_page=2)
+        articles = cls.query.filter_by(category_id=category_id).paginate(page=page, per_page=5)
         return articles
 
     @classmethod
